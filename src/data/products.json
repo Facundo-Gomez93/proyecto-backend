@@ -1,84 +1,62 @@
-    [
-        {
-            "id": 1,
-            "title": "Tarta cabsha",
-            "description": "Tarta cabsha con dulce de leche y chocolate",
-            "price": 4000,
-            "img": "sin imagen",
-            "code": "abc111",
-            "stock": 20,
-            "category": "tarta"
-        },
-        {
-            "id": 2,
-            "title": "Medialunas de manteca",
-            "description": "Docena de medialunas de manteca recién horneadas",
-            "price": 1200,
-            "img": "sin imagen",
-            "code": "def222",
-            "stock": 15,
-            "category": "factura"
-        },
-        {
-            "id": 3,
-            "title": "Torta de frutillas",
-            "description": "Torta de frutillas frescas con crema chantilly",
-            "price": 3500,
-            "img": "sin imagen",
-            "code": "ghi333",
-            "stock": 10,
-            "category": "torta"
-        },
-        {
-            "id": 4,
-            "title": "Brownie de chocolate",
-            "description": "Brownie de chocolate con nueces y dulce de leche",
-            "price": 1800,
-            "img": "sin imagen",
-            "code": "jkl444",
-            "stock": 8,
-            "category": "brownie"
-        },
-        {
-            "id": 5,
-            "title": "Palmeritas de hojaldre",
-            "description": "Media docena de palmeritas de hojaldre caramelizadas",
-            "price": 1000,
-            "img": "sin imagen",
-            "code": "mno555",
-            "stock": 12,
-            "category": "factura"
-        },
-        {
-            "id": 6,
-            "title": "Cupcakes de vainilla",
-            "description": "Cupcakes de vainilla con frosting de chocolate",
-            "price": 1500,
-            "img": "sin imagen",
-            "code": "pqr666",
-            "stock": 10,
-            "category": "cupcake"
-        },
-        {
-            "id": 7,
-            "title": "Empanaditas de membrillo",
-            "description": "Docena de empanaditas de membrillo artesanales",
-            "price": 1600,
-            "img": "sin imagen",
-            "code": "stu777",
-            "stock": 9,
-            "category": "factura"
-        },
-        {
-            "id": 8,
-            "title": "Torta de manzana",
-            "description": "Torta de manzana con crumble de canela",
-            "price": 3000,
-            "img": "sin imagen",
-            "code": "vwx888",
-            "stock": 7,
-            "category": "torta"
-        }
-    ]
-    
-
+[
+  {
+    "id": 1,
+    "title": "Tarta cabsha",
+    "description": "Tarta cabsha con dulce de leche y chocolate",
+    "price": 4000,
+    "img": "sin imagen",
+    "code": "abc111",
+    "stock": 20,
+    "category": "tarta"
+  },
+  {
+    "id": 2,
+    "title": "Medialunas de manteca",
+    "description": "Docena de medialunas de manteca recién horneadas",
+    "price": 1200,
+    "img": "sin imagen",
+    "code": "def222",
+    "stock": 15,
+    "category": "factura"
+  },
+  {
+    "id": 3,
+    "title": "Torta de frutillas",
+    "description": "Torta de frutillas frescas con crema chantilly",
+    "price": 3500,
+    "img": "sin imagen",
+    "code": "ghi333",
+    "stock": 10,
+    "category": "torta"
+  },
+  {
+    "id": 6,
+    "title": "Cupcakes de vainilla",
+    "description": "Cupcakes de vainilla con frosting de chocolate",
+    "price": 1500,
+    "img": "sin imagen",
+    "code": "pqr666",
+    "stock": 10,
+    "category": "cupcake"
+  },
+  {
+    "id": 7,
+    "title": "Empanaditas de membrillo",
+    "description": "Docena de empanaditas de membrillo artesanales",
+    "price": 1600,
+    "img": "sin imagen",
+    "code": "stu777",
+    "stock": 9,
+    "category": "factura"
+  },
+  {
+    "id": 8,
+    "title": "Torta de manzana",
+    "description": "Torta de manzana con crumble de canela",
+    "price": 3000,
+    "img": "sin imagen",
+    "code": "vwx888",
+    "stock": 7,
+    "category": "torta"
+  }
+]
