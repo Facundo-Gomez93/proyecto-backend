@@ -55,5 +55,13 @@ io.on("connection", async (socket) => {
         //Despues de borrar le envio los productos actualizados al cliente: 
         io.sockets.emit("productos", await manager.getProducts());
     })
+
+    socket.on("productForm" , async (data) => {
+        //Gusrdamos productos creados
+        const { title, description, price, thumbnail, code, stock, category } = data;
+        await productManager.addProduct({ title, description, price, thumbnail, code, stock, category });
+        socket.emit("products", await productManager.getProducts());
+        console.log("Productos actualizados");
+    });
     
 })

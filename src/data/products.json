@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Tarta cabsha",
-    "description": "Tarta cabsha con dulce de leche y chocolate",
-    "price": 4000,
-    "img": "sin imagen",
-    "code": "abc111",
-    "stock": 20,
-    "category": "tarta"
-  },
-  {
     "id": 2,
     "title": "Medialunas de manteca",
     "description": "Docena de medialunas de manteca recién horneadas",
