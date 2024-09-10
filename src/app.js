@@ -4,6 +4,7 @@ const PUERTO = 3000;
 const productsRouter = require("./routes/products.router.js");
 const cartsRouter = require("./routes/carts.router.js"); 
 const viewsRouter = require("./routes/views.router.js");
+require("./database.js");
 
 const socket = require("socket.io");
 
@@ -18,6 +19,7 @@ app.set("views", "./src/views");
 
 //Middleware: 
 app.use(express.json()); 
+app.use(express.urlencoded({extended: true}));
 app.use(express.static("./src/public")); 
 
 
@@ -34,8 +36,8 @@ const httpServer = app.listen(PUERTO, () => {
     console.log(`Escuchando en el http://localhost:${PUERTO}`); 
 })
 
-const ProductManager = require ("./managers/product-manager.js");
-const manager = new ProductManager ("./src/data/products.json");
+const ProductManager = require ("./dao/db/product-manager-db.js");
+const manager = new ProductManager ();
 
 
 const io = socket(httpServer);

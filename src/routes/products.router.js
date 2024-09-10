@@ -1,7 +1,7 @@
 const express = require("express"); 
 const router = express.Router(); 
-const ProductManager = require("../managers/product-manager.js"); 
-const manager = new ProductManager("./src/data/products.json");
+const ProductManager = require("../dao/db/product-manager-db.js"); 
+const manager = new ProductManager();
 
 //Listar todos los productos: 
 
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 router.get("/:pid", async (req, res) => {
     let id = req.params.pid; 
     try {
-        const product = await manager.getProductById(parseInt(id)); 
+        const product = await manager.getProductById(id); 
 
         if(!product) {
             res.send("Producto no encontrado"); 
