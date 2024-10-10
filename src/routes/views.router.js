@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const ProductManager = require("../dao/db/product-manager-db.js");
+import { Router } from "express";
+const router = Router();
+import ProductManager from "../dao/db/product-manager-db.js";
 const manager = new ProductManager();
 
 
@@ -17,4 +17,4 @@ router.get ( "/realtimeproducts", (req, res) => {
 )
 
 
-module.exports = router;
+export default router

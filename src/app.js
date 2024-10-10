@@ -1,19 +1,28 @@
-const express = require("express");
+import express from "express";
 const app = express ()
 const PUERTO = 3000;
-const productsRouter = require("./routes/products.router.js");
-const cartsRouter = require("./routes/carts.router.js"); 
-const viewsRouter = require("./routes/views.router.js");
-require("./database.js");
+import productsRouter from "./routes/products.router.js";
+import cartsRouter from "./routes/carts.router.js"; 
+import viewsRouter from "./routes/views.router.js";
+import ProductManager from "./dao/db/product-manager-db.js";
+import  CartManager  from "./dao/db/cart-manager-db.js";
+import "./database.js";
+import { Server } from "socket.io";
 
-const socket = require("socket.io");
+import cookieParser from "cookie-parser";
+import  passport  from "passport";
+import initializePassport from "./config/passport.config.js";
+import userViewsRouter from "./routes/userviews.router.js";
+import {userRouter} from "./routes/user.router.js";
+
+
 
 
 
 //Handlebars
-const exphbs = require("express-handlebars");
+import { engine } from "express-handlebars";
 
-app.engine("handlebars", exphbs.engine());
+app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
 
@@ -21,13 +30,17 @@ app.set("views", "./src/views");
 app.use(express.json()); 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("./src/public")); 
+app.use(cookieParser());
+app.use(passport.initialize());
+initializePassport();
 
 
 //Rutas
 app.use("/api/products", productsRouter );
 app.use("/api/carts", cartsRouter); 
 app.use("/", viewsRouter);
-
+app.use("/", userViewsRouter);
+app.use("/api/sessions", userRouter);
 
 
 
@@ -36,11 +49,13 @@ const httpServer = app.listen(PUERTO, () => {
     console.log(`Escuchando en el http://localhost:${PUERTO}`); 
 })
 
-const ProductManager = require ("./dao/db/product-manager-db.js");
-const manager = new ProductManager ();
+
+const productManager = new ProductManager ();
+const cartManager = new CartManager ();
 
 
-const io = socket(httpServer);
+
+const io = new Server(httpServer);
 
 
 io.on("connection", async (socket) => {
@@ -67,3 +82,8 @@ io.on("connection", async (socket) => {
     });
     
 })
+
+
+
+export {productManager}
+export {cartManager} 
